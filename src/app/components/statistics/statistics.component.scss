@@ -1,0 +1,114 @@
+.container {
+  padding: 2rem;
+  padding: 1rem;
+  margin: 2rem;
+  border: 1px solid hsl(0, 0%, 85%);
+  border-radius: 10px;
+
+  .total-views {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1.5rem;
+    border: 1px solid hsl(0, 0%, 85%);
+    border-radius: 10px;
+    text-align: center;
+
+    div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.2rem;
+
+      h4 {
+        font-size: 1.2rem;
+        font-weight: 500;
+        color: hsl(0, 0%, 40%);
+      }
+
+      .live {
+        width: 5px;
+        height: 5px;
+        background-color: hsl(0deg 98% 52.68%);
+        border-radius: 50%;
+      }
+    }
+
+    h6 {
+      font-size: 2rem;
+      font-weight: 600;
+      color: hsl(0, 0%, 20%);
+      letter-spacing: 2px;
+    }
+  }
+
+  .chart-container {
+    padding: 2rem;
+
+    .choices {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      h4 {
+        font-size: 1.4rem;
+        color: hsl(0, 0%, 30%);
+        font-weight: 500;
+      }
+
+      select {
+        border-radius: 5px;
+        padding: 5px;
+      }
+    }
+
+    .categories {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      margin: 1rem 0rem;
+
+      .category {
+        padding: 1.5rem;
+        border: 1px solid hsl(0, 0%, 85%);
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+
+        &:first-child {
+          border-top-left-radius: 10px;
+          border-bottom-left-radius: 10px;
+        }
+
+        &:last-child {
+          border-top-right-radius: 10px;
+          border-bottom-right-radius: 10px;
+        }
+
+        h6 {
+          font-size: 1.2rem;
+          color: hsl(0, 0%, 20%);
+        }
+        p {
+          font-size: 1rem;
+          color: hsl(0, 0%, 50%);
+        }
+      }
+
+      .active {
+        background-color: hsl(262.66deg 83.93% 56.08%);
+
+        h6,
+        p {
+          color: hsl(0, 0%, 100%);
+        }
+      }
+    }
+
+    .chart-area {
+      width: 100%;
+      height: 350px;
+    }
+  }
+}

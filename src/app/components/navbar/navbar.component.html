@@ -1,0 +1,31 @@
+<nav>
+  <div class="left-section" routerLink="/"><h4>Pexels</h4></div>
+  <div class="right-section">
+    <ul>
+      <li>Explore</li>
+      <li>License</li>
+      <li>
+        <button class="upload-btn" *ngIf="!loggedinStatus" routerLink="login">
+          Login
+        </button>
+      </li>
+      <li *ngIf="loggedinStatus"><mat-icon>notifications</mat-icon></li>
+      <li *ngIf="loggedinStatus" class="dropdown">
+        <div class="group">
+          <img src="assets/images/icons/user.png" alt="user" class="user" />
+          <mat-icon class="icon">keyboard_arrow_down</mat-icon>
+        </div>
+
+        <div class="dropdown-content">
+          <a routerLink="profile">Your Profile</a>
+          <a href="#">Your collections</a>
+          <a href="#">Settings</a>
+          <a href="#">Change Language</a>
+          <a href="#">FAQ</a>
+          <a (click)="logout()" style="cursor: pointer">Logout</a>
+        </div>
+      </li>
+      <li><button class="upload-btn" *ngIf="loggedinStatus">Upload</button></li>
+    </ul>
+  </div>
+</nav>

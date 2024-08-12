@@ -1,0 +1,90 @@
+<div class="profile-container">
+  <section class="head-section">
+    <img src="assets/images/icons/user.png" alt="user_pic" class="user_pic" />
+    <div class="name">Ankit Sahu</div>
+    <button class="edit-btn">
+      <mat-icon class="icon">edit</mat-icon> Edit Profile
+    </button>
+    <p class="bio">
+      Beauty is everywhere, just you need a vision to capture it.
+    </p>
+    <div class="icons">
+      <button>
+        <img
+          src="assets/images/icons/instagram.png"
+          alt="instagram"
+          class="social_icon"
+        />
+      </button>
+      <button>
+        <img
+          src="assets/images/icons/twitter.png"
+          alt="twitter"
+          class="social_icon"
+        />
+      </button>
+    </div>
+    <div class="rank_summary">
+      <div class="total_views">
+        <p>Total Views</p>
+        <h6>546.2k</h6>
+      </div>
+      <div class="all_time_rant">
+        <p>All-time rank</p>
+        <h6>30k</h6>
+      </div>
+      <div class="month_rank">
+        <p>30-day rank</p>
+        <h6>9.5k</h6>
+      </div>
+    </div>
+  </section>
+  <section class="body-section">
+    <div class="categories">
+      <ul>
+        <li
+          [ngClass]="{ active: activeItem === 'Highlights' }"
+          (click)="setActive('Highlights')"
+        >
+          Highlights <span>0</span>
+        </li>
+        <li
+          [ngClass]="{ active: activeItem === 'Gallery' }"
+          (click)="setActive('Gallery')"
+        >
+          Gallery <span>64</span>
+        </li>
+        <li
+          [ngClass]="{ active: activeItem === 'Collections' }"
+          (click)="setActive('Collections')"
+        >
+          Collections
+        </li>
+        <li
+          [ngClass]="{ active: activeItem === 'Statistics' }"
+          (click)="setActive('Statistics')"
+        >
+          Statistics
+        </li>
+        <li
+          [ngClass]="{ active: activeItem === 'Followers' }"
+          (click)="setActive('Followers')"
+        >
+          Followers <span>13</span>
+        </li>
+        <li
+          [ngClass]="{ active: activeItem === 'Following' }"
+          (click)="setActive('Following')"
+        >
+          Following <span>3</span>
+        </li>
+      </ul>
+    </div>
+    <div *ngIf="activeItem === 'Gallery'">
+      <app-gallery></app-gallery>
+    </div>
+    <div *ngIf="activeItem === 'Statistics'">
+      <app-statistics></app-statistics>
+    </div>
+  </section>
+</div>

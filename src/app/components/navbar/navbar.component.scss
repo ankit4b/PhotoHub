@@ -1,0 +1,119 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  background-color: transparent;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 99%;
+  transition: all 500ms;
+  color: hsl(0, 0%, 100%);
+  background: hsl(0, 0%, 100%);
+  color: hsl(0, 0, 0%);
+  z-index: 10;
+
+  &.scrolled {
+    background: hsl(0, 0%, 100%);
+    color: hsl(0, 0%, 0%);
+  }
+
+  .left-section {
+    cursor: pointer;
+    h4 {
+      margin-left: 1rem;
+      font-size: 1.2rem;
+      font-weight: 400;
+      font-size: 1.6rem;
+    }
+  }
+
+  .right-section {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    ul {
+      list-style: none;
+      display: flex;
+      align-items: center;
+
+      li {
+        margin-left: 1.5rem;
+        font-weight: 400;
+        font-size: 1.1rem;
+        cursor: pointer;
+
+        .group {
+          display: flex;
+          gap: 0.3rem;
+          align-items: center;
+          justify-content: center;
+
+          .user {
+            width: 30px;
+            height: 30px;
+          }
+
+          .icon {
+            color: hsl(0, 0%, 30%);
+          }
+        }
+
+        button {
+          padding: 10px 20px;
+          background-color: hsl(0, 0%, 100%);
+          color: hsl(0, 0%, 10%);
+          font-weight: 500;
+          border-radius: 5px;
+        }
+
+        .upload-btn {
+          background-color: hsl(168, 94%, 32%);
+          color: hsl(0, 0%, 100%);
+          border: none;
+          padding: 0.7rem;
+          font-size: 1rem;
+          border-radius: 0.5rem;
+          cursor: pointer;
+        }
+      }
+
+      /* The container <div> - needed to position the dropdown content */
+      .dropdown {
+        position: relative;
+        display: inline-block;
+
+        /* Dropdown Content (Hidden by Default) */
+        .dropdown-content {
+          display: none;
+          position: absolute;
+          background-color: hsl(0, 0%, 100%);
+          min-width: 160px;
+          box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+          z-index: 1;
+          left: -100%;
+
+          a {
+            color: black;
+            padding: 0.5rem 0.8rem;
+            text-decoration: none;
+            display: block;
+            font-size: 1rem;
+
+            &:hover {
+              background-color: #ddd;
+            }
+          }
+        }
+
+        &:hover {
+          .dropdown-content {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+}

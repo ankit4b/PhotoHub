@@ -1,0 +1,71 @@
+<div class="container">
+  <div class="total-views">
+    <div>
+      <h4>Live views</h4>
+      <div class="live"></div>
+    </div>
+    <h6>546,444</h6>
+  </div>
+
+  <div class="chart-container">
+    <div class="choices">
+      <h4>Overview</h4>
+
+      <select (change)="onSelectChange($event)">
+        <option value="monthData">30 Days</option>
+        <option value="allTimeData">All Time</option>
+      </select>
+    </div>
+
+    <div class="categories">
+      <div
+        class="category"
+        [ngClass]="{ active: activeCatagory === 'Views' }"
+        (click)="setCatagory('Views')"
+      >
+        <p>Views</p>
+        <h6>1520</h6>
+      </div>
+      <div
+        class="category"
+        [ngClass]="{ active: activeCatagory === 'Downloads' }"
+        (click)="setCatagory('Downloads')"
+      >
+        <p>Downloads</p>
+        <h6>182</h6>
+      </div>
+      <div
+        class="category"
+        [ngClass]="{ active: activeCatagory === 'Likes' }"
+        (click)="setCatagory('Likes')"
+      >
+        <p>Likes</p>
+        <h6>50</h6>
+      </div>
+      <div
+        class="category"
+        [ngClass]="{ active: activeCatagory === 'Followers' }"
+        (click)="setCatagory('Followers')"
+      >
+        <p>Followers</p>
+        <h6>25</h6>
+      </div>
+    </div>
+    <div class="chart-area">
+      <ngx-charts-line-chart
+        [scheme]="'cool'"
+        [results]="data"
+        [gradient]="gradient"
+        [xAxis]="showXAxis"
+        [yAxis]="showYAxis"
+        [legend]="showLegend"
+        [showXAxisLabel]="showXAxisLabel"
+        [showYAxisLabel]="showYAxisLabel"
+        [xAxisLabel]="xAxisLabel"
+        [yAxisLabel]="yAxisLabel"
+        [autoScale]="true"
+      >
+      </ngx-charts-line-chart>
+    </div>
+  </div>
+</div>

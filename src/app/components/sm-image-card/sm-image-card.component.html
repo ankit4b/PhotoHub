@@ -1,0 +1,22 @@
+<div class="image-container">
+  <img class="image" [src]="image" [alt]="image" />
+  <div class="top-icons hide">
+    <button><mat-icon class="icon">file_copy</mat-icon></button>
+    <button (click)="addFavorite()">
+      <mat-icon class="icon" [style.color]="favoriteStatus ? 'red' : ''"
+        >favorite</mat-icon
+      >
+    </button>
+    <!-- <mat-icon>favorite_border</mat-icon> -->
+  </div>
+  <div class="user-name hide">
+    <img src="assets/images/icons/user.png" alt="user" class="user_icon" /> User
+    name
+  </div>
+  <div class="download hide">
+    <a [href]="image" download>
+      <button><mat-icon class="icon">save_alt</mat-icon> Download</button>
+    </a>
+  </div>
+  <div class="overlay"></div>
+</div>

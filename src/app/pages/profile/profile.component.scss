@@ -1,0 +1,110 @@
+.profile-container {
+  margin-top: 5rem;
+  .head-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+
+    .user_pic {
+      height: 100px;
+      width: 100px;
+    }
+
+    .name {
+      font-size: 2rem;
+      font-weight: 400;
+    }
+
+    .edit-btn {
+      background-color: hsl(168, 94%, 32%);
+      color: hsl(0, 0%, 100%);
+      border: none;
+      padding: 0.7rem;
+      font-size: 1rem;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+
+      .icon {
+        font-size: 1.2rem;
+        height: 1.2rem;
+        width: 1.2rem;
+      }
+    }
+
+    .bio {
+      color: hsl(0, 0%, 60%);
+    }
+
+    .icons {
+      display: flex;
+      gap: 1rem;
+
+      button {
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+
+        .social_icon {
+          width: 25px;
+          height: 25px;
+        }
+      }
+    }
+
+    .rank_summary {
+      margin-top: 1rem;
+      display: flex;
+      gap: 3rem;
+
+      * {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+
+        p {
+          color: hsl(0, 0%, 60%);
+        }
+
+        h6 {
+          color: hsl(0, 0%, 20%);
+          font-size: 1.2rem;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+
+  .body-section {
+    margin-top: 3rem;
+    .categories {
+      margin-bottom: 2rem;
+      ul {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+
+        li {
+          padding: 0.6rem 1rem;
+          font-size: 1rem;
+          font-weight: 500;
+          color: hsl(0, 0%, 50%);
+          cursor: pointer;
+        }
+
+        .active {
+          background-color: hsl(0, 0%, 10%);
+          color: hsl(0, 0%, 100%);
+          border-radius: 1.2rem;
+        }
+      }
+    }
+  }
+}

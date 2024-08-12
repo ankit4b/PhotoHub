@@ -1,0 +1,47 @@
+<div class="container">
+  <header>
+    <h5>
+      The best free stock photos, royalty free images & videos shared by
+      creators.
+    </h5>
+    <div class="search-container">
+      <input type="text" placeholder="Search for free photos" />
+      <button class="searchicon"><mat-icon>search</mat-icon></button>
+    </div>
+  </header>
+  <main>
+    <div class="categories">
+      <ul>
+        <li
+          [ngClass]="{ active: activeItem === 'Home' }"
+          (click)="setActive('Home')"
+        >
+          Home
+        </li>
+        <li
+          [ngClass]="{ active: activeItem === 'Community' }"
+          (click)="setActive('Community')"
+        >
+          Community
+        </li>
+        <li
+          [ngClass]="{ active: activeItem === 'Leaderboard' }"
+          (click)="setActive('Leaderboard')"
+        >
+          Leaderboard
+        </li>
+        <li
+          [ngClass]="{ active: activeItem === 'Challenges' }"
+          (click)="setActive('Challenges')"
+        >
+          Challenges
+        </li>
+      </ul>
+    </div>
+
+    <section>
+      <h4>Free Stock Photos</h4>
+      <app-gallery></app-gallery>
+    </section>
+  </main>
+</div>

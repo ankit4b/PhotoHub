@@ -1,0 +1,188 @@
+<div class="container">
+  <div class="form-container">
+    <div class="choices">
+      <a *ngIf="activeTab === 'registration'" (click)="changeTab('login')"
+        >Login</a
+      >
+      <a *ngIf="activeTab === 'login'" (click)="changeTab('registration')"
+        >Registration</a
+      >
+    </div>
+    <h4>Welcome back.</h4>
+    <div class="social-login">
+      <button class="google">
+        <img
+          src="assets/images/icons/google.png"
+          alt="google"
+          class="icon"
+        /><span *ngIf="activeTab === 'registration'">Sign-up with Google</span
+        ><span *ngIf="activeTab === 'login'">Log in with Google</span>
+      </button>
+      <button class="apple">
+        <img src="assets/images/icons/apple.png" alt="apple" class="icon" />
+      </button>
+      <button class="facebook">
+        <img
+          src="assets/images/icons/facebook.png"
+          alt="facebook"
+          class="icon"
+        />
+      </button>
+    </div>
+    <p *ngIf="activeTab === 'login'">Or, log in with your email</p>
+    <p *ngIf="activeTab === 'registration'">Or, Register with your email</p>
+    <form
+      [formGroup]="loginForm"
+      (ngSubmit)="onLoginSubmit()"
+      id="login-form"
+      *ngIf="activeTab === 'login'"
+    >
+      <label for="email">Email</label>
+      <input
+        type="text"
+        placeholder="name@email.com"
+        name="email"
+        id="email"
+        formControlName="email"
+        autocomplete="email"
+      />
+      <div
+        class="error"
+        *ngIf="
+          loginForm.get('email')?.invalid &&
+          (loginForm.get('email')?.dirty || loginForm.get('email')?.touched)
+        "
+      >
+        Please provide the valid email.
+      </div>
+
+      <label for="password">Password</label>
+      <input
+        type="password"
+        placeholder="password"
+        name="password"
+        id="password"
+        formControlName="password"
+        autocomplete="password"
+      />
+      <div
+        class="error"
+        *ngIf="
+          loginForm.get('password')?.invalid &&
+          (loginForm.get('password')?.dirty ||
+            loginForm.get('password')?.touched)
+        "
+      >
+        Please provide the password.
+      </div>
+      <a class="forgot-password">Forgot your password?</a>
+      <button
+        class="login"
+        [disabled]="!loginForm.valid"
+        [style.cursor]="loginForm.valid ? 'pointer' : 'not-allowed'"
+      >
+        Login
+      </button>
+    </form>
+
+    <form
+      [formGroup]="registrationForm"
+      (ngSubmit)="onRegistrationSubmit()"
+      id="signup-form"
+      *ngIf="activeTab === 'registration'"
+    >
+      <label for="name">Name</label>
+      <input
+        type="text"
+        placeholder="Name"
+        name="name"
+        id="name"
+        formControlName="name"
+        autocomplete="name"
+      />
+      <div
+        class="error"
+        *ngIf="
+          registrationForm.get('name')?.invalid &&
+          (registrationForm.get('name')?.dirty ||
+            registrationForm.get('name')?.touched)
+        "
+      >
+        Please provide the name.
+      </div>
+
+      <label for="email">Email</label>
+      <input
+        type="text"
+        placeholder="name@email.com"
+        name="email"
+        id="email"
+        formControlName="email"
+        autocomplete="email"
+      />
+      <div
+        class="error"
+        *ngIf="
+          registrationForm.get('email')?.invalid &&
+          (registrationForm.get('email')?.dirty ||
+            registrationForm.get('email')?.touched)
+        "
+      >
+        Please provide the email.
+      </div>
+
+      <div class="form-grp">
+        <div>
+          <label for="password">Password</label>
+          <input
+            type="password"
+            placeholder="password"
+            name="password"
+            id="password"
+            formControlName="password"
+            autocomplete="password"
+          />
+          <div
+            class="error"
+            *ngIf="
+              registrationForm.get('password')?.invalid &&
+              (registrationForm.get('password')?.dirty ||
+                registrationForm.get('password')?.touched)
+            "
+          >
+            Please provide the password.
+          </div>
+        </div>
+        <div>
+          <label for="confirm_password">Confirm Password</label>
+          <input
+            type="password"
+            placeholder="password"
+            name="confirm_password"
+            id="confirm_password"
+            formControlName="confirm_password"
+            autocomplete="confirm_password"
+          />
+          <div
+            class="error"
+            *ngIf="
+              registrationForm.get('confirm_password')?.invalid &&
+              (registrationForm.get('confirm_password')?.dirty ||
+                registrationForm.get('confirm_password')?.touched)
+            "
+          >
+            Please provide the confirm password.
+          </div>
+        </div>
+      </div>
+
+      <button
+        class="login"
+        [disabled]="!registrationForm.valid"
+        [style.cursor]="registrationForm.valid ? 'pointer' : 'not-allowed'"
+      >
+        Register
+      </button>
+    </form>
+  </div>
+</div>
